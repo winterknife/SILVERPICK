@@ -1,0 +1,32 @@
+{
+    // https://code.visualstudio.com/docs/debugtest/tasks
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build (Makefile)",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "${input:maketarget}"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Default build task."
+        }
+    ],
+    "inputs": [
+        {
+            "id": "maketarget",
+            "type": "promptString",
+            "description": "Make target input."
+        }
+    ]
+}

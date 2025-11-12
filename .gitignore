@@ -1,0 +1,9 @@
+[Bb]in/
+[Tt]emp/
+*.exe
+*.dll
+*.sys
+*.bin
+*.obj
+*.map
+*.disasm
