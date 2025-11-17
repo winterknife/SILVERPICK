@@ -132,7 +132,7 @@ While this is not a novel concept, `SILVERPICK` offers some improvements over ex
 
 Firstly, we use the 64-bit variant of the popular `FNV-1a` non-cryptographic hash function in order to reduce the probability of a successful hash collision attack.
 
-Secondly, we use a modified parameter for the hash function to defend against precalculated hash table lookups, such as [HashDB](https://hashdb.openanalysis.net/). Crucially, this does _not_ change the properties of the hash function.
+Secondly, we use a modified parameter for the hash function to defend against [precalculated hash table lookups](https://cloud.google.com/blog/topics/threat-intelligence/precalculated-string-hashes-reverse-engineering-shellcode/), such as [HashDB](https://github.com/OALabs/hashdb). Crucially, this does _not_ change the properties of the hash function.
 
 To hash a short string at run time, simply use the [HASH_STRING_RUN_TIME](/Inc/HashString.h#L45) macro.
 
@@ -238,6 +238,7 @@ While writing `PIC` in `C/C++` using the `SILVERPICK` framework, you have to tak
 The section contains a non-exhaustive list of planned enhancements that will be integrated into a future project.
 
 - [ ] Switch to `Clang/LLVM` toolchain.
+- [ ] Switch to a different build system.
 - [ ] Compile-time string obfuscation that works with stack strings and is resistant to [FLOSS](https://github.com/mandiant/flare-floss).
 - [ ] Compile-time string hashing using seeded non-cryptographic custom hash function.
 - [ ] Alternate method to retrieve `GS` segment base address.
